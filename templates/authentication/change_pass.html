@@ -1,0 +1,29 @@
+{% extends "navbar.html" %}
+{% block title %}Change pasword{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0 mb-3">
+    <img src="https://source.unsplash.com/1600x400/?register" class="d-block w-100" alt="...">
+  </div>
+<div class="container py-4" >
+
+   <h1>Enter your details here!</h1>
+     <form method="post" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Current Password</label>
+            <input type="Password" class="form-control" id="txtOPass" name="txtOPass">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">New Password</label>
+            <input type="Password" class="form-control" id="txtNPass" name="txtNPass">
+            </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
+            <input type="Password" class="form-control" id="txtConfPass" name="txtConfPass">
+        </div>
+        <button type="submit" class="btn btn-primary">Change password</button>
+    </form>
+</div>
+{% endblock body %}

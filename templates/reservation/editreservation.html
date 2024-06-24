@@ -1,0 +1,42 @@
+{% extends "navbar.html" %}
+{% block title %}Reservation{% endblock title %}
+{% block body %}
+<div class="container-fluid" >
+
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="txtName" name="txtName" value="{{selected_reservation.c_name}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="txtPhone" name="txtPhone" value="{{selected_reservation.c_phno}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">email</label>
+            <input type="email" class="form-control" id="txtEmail" name="txtEmail" value="{{selected_reservation.c_email}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Date</label>
+            <input type="date" class="form-control" id="txtDate" name="txtDate" value="{{selected_reservation.rdate|date:'Y-m-d'}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Time</label>
+            <input type="time" class="form-control" id="txtTime" name="txtTime" value="{{selected_reservation.rtime|time:'H:i'}}">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">No. of People</label>
+            <input type="number" min="1" class="form-control" id="txtPplcount" name="txtPplcount" value="{{selected_reservation.rppl}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Special Request</label>
+            <textarea class="form-control" id="txtDesc" name="txtDesc" rows='3' >{{selected_reservation.c_desc}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock body %}

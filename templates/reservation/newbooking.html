@@ -1,0 +1,44 @@
+{% extends "navbar.html" %}
+{% block title %}Feedback{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0 mb-3">
+    
+  </div>
+<div class="container py-4" >
+
+   <h1>Book your table here!</h1>
+     <form method="post" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="txtName" name="txtName">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="txtPhone" name="txtPhone">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">email</label>
+            <input type="email" class="form-control" id="txtEmail" name="txtEmail">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Date</label>
+            <input type="date" class="form-control" id="txtDate" name="txtDate">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Time</label>
+            <input type="time" class="form-control" id="txtTime" name="txtTime">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">No. of people</label>
+            <input type="number" min="1" class="form-control" id="txtPplcount" name="txtPplcount">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Special Request</label>
+            <textarea class="form-control" id="txtDesc" name="txtDesc" rows='3' ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+</div>
+{% endblock body %}

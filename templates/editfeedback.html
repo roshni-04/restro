@@ -1,0 +1,104 @@
+{% extends "navbar.html" %}
+{% block title %}Edit Feedback{% endblock title %}
+{% block body %}
+
+<style>
+
+    .checked {
+      color: orange;
+    }
+    
+    .rating {
+      /* margin-top: 40px; */
+      border: none;
+      float: left;
+    
+    }
+    
+    .rating > label {
+       color: #9C9C9C;
+      font-size: 7px;
+      float:right;
+    }
+    
+    
+    .rating > label:before {
+      margin: 5px;
+      font-size: 2em;
+      font-family: FontAwesome;
+      content: "\f005";
+      display: inline-block;
+    }
+    
+    .rating > input {
+      display: none;
+    }
+    
+    .rating > input:checked ~ label,
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+      color: #F79426;
+    }
+    
+    .rating > input:checked + label:hover,
+    .rating > input:checked ~ label:hover,
+    .rating > label:hover ~ input:checked ~ label,
+    .rating > input:checked ~ label:hover ~ label {
+      color: #FECE31;
+    }
+    
+    
+    #star{
+    font-size: 10px;
+    color:grey;
+    }
+    
+    #check-star{
+    font-size: 10px;
+    }
+    
+</style>
+
+<div class="container-fluid" >
+
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="txtName" name="txtName" value="{{selected_feedback.c_name}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="txtPhone" name="txtPhone" value="{{selected_feedback.c_phno}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">email</label>
+            <input type="email" class="form-control" id="txtEmail" name="txtEmail" value="{{selected_feedback.c_email}}">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Description</label>
+            <textarea class="form-control" id="txtDesc" name="txtDesc" rows='3' >{{selected_feedback.c_desc}}</textarea>
+        </div>
+        <div class="mb-3">
+            <div class="form-group required">
+                <div class="rating">
+          
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class="star" for="star5" title="Awesome" aria-hidden="true"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class="star" for="star4" title="Great" aria-hidden="true"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class="star" for="star2" title="Good" aria-hidden="true"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class="star" for="star1" title="Bad" aria-hidden="true"></label>
+          
+                  </div>
+                
+              </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock body %}
