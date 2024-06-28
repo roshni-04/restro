@@ -7,4 +7,5 @@ feedback submission with a transparent review display.
 ![All-Feedbacks_RestroAPP](https://github.com/roshni-04/restro/assets/113779963/3ba94d21-8794-4539-89b1-5087d492dc9d)
 ![Reservations_RestroAPP](https://github.com/roshni-04/restro/assets/113779963/ce5ffb33-84f0-4aa0-9eba-d1025cebd24c)
 ![Cuisines-_RestroAPP](https://github.com/roshni-04/restro/assets/113779963/2d12700e-c3e3-4bc5-b674-7a966b158647)
-![All-Menu_RestroAPP](https://github.com/roshni-04/restro/assets/113779963/5cd3f250-d651-43e7-a4e7-561234bcef71)
+![Feedback_RestroAPP](https://github.com/roshni-04/restro/assets/113779963/90d697df-e3c3-4fcf-bd30-1b79266a2c0f)
+![All-Menu_RestroAPP](https://github.com/roshni-04/restro/assets/113779963/c4b58060-95b9-4a92-9967-bab49baced6d)
